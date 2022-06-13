@@ -1,0 +1,92 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mt-5">
+            <div class="card border-0 shadow p-3">
+                <div class="form-floating mb-3 text-center">
+                    <h5 class="text-center text-warning">Add Customer</h5>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="firstName">
+                    <label for="firstName">First Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="lastName">
+                    <label for="lastName">Last Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
+                    <label for="email">Email Address</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="mobile" name="mobile" [(ngModel)]="mobile">
+                    <label for="mobile">Mobile</label>
+                </div>
+                <button type="button" class="btn btn-outline-success" (click)="addCustomer()">
+                    Add Customer
+                </button>
+            </div>
+        </div>
+        <div class="col-md-8 mt-5">
+            <div class="card shadow">
+                <!-- <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Mobile</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let customer of customerList">
+                                <td>{{ customer.firstName }}</td>
+                                <td>{{ customer.lastName }}</td>
+                                <td>{{ customer.email }}</td>
+                                <td>{{ customer.mobile }}</td>
+                                <td>
+                                    <button class="btn btn-outline-danger"
+                                        (click)="deleteCustomer(customer)">Delete</button>
+                                    <button class="btn btn-outline-info ms-1">Update</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> -->
+
+                <div class="tbl-header">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Mobile</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tbl-content mb-2">
+                    <table id="datatable">
+                        <tbody>
+                            <tr *ngFor="let customer of customerList">
+                                <td class="text-capitalize">{{ customer.firstName }}</td>
+                                <td class="text-uppercase">{{ customer.lastName }}</td>
+                                <td>{{ customer.email }}</td>
+                                <td>{{ customer.mobile }}</td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-danger" (click)="deleteCustomer(customer)">
+                                        Delete
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-info ms-1">
+                                        Update
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
